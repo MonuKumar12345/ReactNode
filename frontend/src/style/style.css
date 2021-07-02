@@ -1,0 +1,21 @@
+.login-card, .register-card{
+    width:50% !important;
+    left:25%;
+    margin-top:10%;
+}
+.form-title{
+    text-align: center;
+    color:#3f51b5;
+}
+#mobileno{
+    text-decoration: none;
+}
+.margin-left-5{
+    margin-left:5%;
+}
+.margin-top-2{
+    margin-top:2%;
+}
+.inputError{
+    color:#dc143c;
+}

@@ -12,6 +12,6 @@ app.use(express.urlencoded({extended:true}));
 
 app.use(Apis);
 
-app.listen(5000, ()=>{
+app.listen(6000, ()=>{
     console.log("working at port");
 })

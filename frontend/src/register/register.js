@@ -4,6 +4,7 @@ import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
 import { RegisterModel } from './registerModel';
 import { ServiceRegister } from './registerService';
 import Toaster from './../common/toast';
+import store from './../store/store';
 
 class Register extends Component {
     constructor() {

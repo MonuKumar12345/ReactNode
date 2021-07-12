@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Toaster from './../common/toast';
 import { LoginModel } from './loginModel';
 import { LoginService } from './loginService';
+import store from './../store/store';
+import { withRouter } from 'react-router-dom';
 
 class Login extends Component {
     constructor() {
@@ -48,7 +50,14 @@ class Login extends Component {
         if (errorCount === 0) {
             this.loginService.loginUser(updatedLoginModel).then(response => {
                 if (response.data.success) {
+                    store.dispatch({
+                        type: 'login_register',
+                        data: response.data.data
+                    });
                     this.toastInstance.showToast(1, response.data.message);
+                    setTimeout(() => {
+                        this.props.history.push('/home');  
+                    }, 2000);
                 }
                 else {
                     this.toastInstance.showToast(2, response.data.message);
@@ -97,4 +106,4 @@ class Login extends Component {
         </div>);
     }
 }
-export default Login;
+export default withRouter(Login);
